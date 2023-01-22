@@ -21,7 +21,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 }
 
 resource "aws_s3_object" "file" {
-  for_each     = fileset(path.module, "content/**/*.{html,css,js}")
+  for_each     = fileset(path.module, "content/**/*")
   bucket       = aws_s3_bucket.bucket.id
   key          = replace(each.value, "/^content//", "")
   source       = each.value
