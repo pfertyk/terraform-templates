@@ -4,3 +4,4 @@ This is a collection of ready-to-use Terraform solutions to some common problems
 
 Corresponding blog posts:
 * `static-website`: [Creating a static website with Terraform and AWS](https://pfertyk.me/2023/01/creating-a-static-website-with-terraform-and-aws/)
+* `lambda`: [Creating AWS Lambda functions with Terraform](https://pfertyk.me/2023/02/creating-aws-lambda-functions-with-terraform/)
