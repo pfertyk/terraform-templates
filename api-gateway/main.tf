@@ -69,7 +69,7 @@ resource "aws_apigatewayv2_api" "api" {
 }
 
 resource "aws_apigatewayv2_stage" "stage" {
-  name        = "$default"
+  name        = "test-stage"
   auto_deploy = true
   api_id      = aws_apigatewayv2_api.api.id
 }
@@ -94,9 +94,3 @@ resource "aws_lambda_permission" "api" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.api.execution_arn}/*/*/*"
 }
-
-resource "aws_iam_role_policy_attachment" "policy" {
-  role       = aws_iam_role.iam_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-}
-
